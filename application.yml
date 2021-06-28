@@ -10,16 +10,18 @@ spring:
 tenants:
   datasources:
     clinica0001:
-      url: jdbc:postgresql://localhost:5432/evoclinica?currentSchema=clinica0001
+      url: jdbc:postgresql://localhost:5432/evoclinica
       driverClassName: org.postgresql.Driver
       username: evoclinica
       #password: 
+      schema: clinica0001
       maximum-pool-size: 3
       pool-name: Hikari-clinica0001
     clinica0002:
-      url: jdbc:postgresql://localhost:5432/evoclinica?currentSchema=clinica0002
+      url: jdbc:postgresql://localhost:5432/evoclinica
       driverClassName: org.postgresql.Driver
       username: evoclinica
       #password: 
+      schema: clinica0002
       maximum-pool-size: 3
       pool-name: Hikari-clinica0002
