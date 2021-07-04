@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: evoclinica
+    show-sql: true
+    ddl-auto: none
+    naming:
+      physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+tenants:
+  datasources:
+    clinica0001:
+      url: jdbc:h2:tcp://localhost:9092/evoclinica:~/.evoclinica/db;SCHEMA=clinica0001;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;INIT=CREATE SCHEMA IF NOT EXISTS clinica0001
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0001
+    clinica0002:
+      url: jdbc:h2:tcp://localhost:9092/evoclinica:~/.evoclinica/db;SCHEMA=clinica0002;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;INIT=CREATE SCHEMA IF NOT EXISTS clinica0002
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0002
