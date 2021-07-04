@@ -1,7 +1,7 @@
 spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    database: evoclinica
+    database: H2
     show-sql: true
     ddl-auto: none
     naming:
