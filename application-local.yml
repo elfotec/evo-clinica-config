@@ -27,3 +27,12 @@ tenants:
       maximum-pool-size: 3
       pool-name: Hikari-clinica0002
       schema: clinica0002
+    clinica0003:
+      url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0003;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      minimum-pool-size: 1
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0003
+      schema: clinica0003
