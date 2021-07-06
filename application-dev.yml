@@ -1,7 +1,7 @@
 spring:
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
     show-sql: true
     ddl-auto: none
     naming:
@@ -10,18 +10,29 @@ spring:
 tenants:
   datasources:
     clinica0001:
-      url: jdbc:postgresql://localhost:5432/evoclinica
-      driverClassName: org.postgresql.Driver
-      username: evoclinica
-      #password: 
-      schema: clinica0001
+      url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0001;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      minimum-pool-size: 1
       maximum-pool-size: 3
       pool-name: Hikari-clinica0001
+      schema: clinica0001
     clinica0002:
-      url: jdbc:postgresql://localhost:5432/evoclinica
-      driverClassName: org.postgresql.Driver
-      username: evoclinica
-      #password: 
-      schema: clinica0002
+      url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0002;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      minimum-pool-size: 1
       maximum-pool-size: 3
       pool-name: Hikari-clinica0002
+      schema: clinica0002
+    clinica0003:
+      url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0003;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      minimum-pool-size: 1
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0003
+      schema: clinica0003

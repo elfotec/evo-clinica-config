@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    show-sql: true
+    ddl-auto: none
+    naming:
+      physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+tenants:
+  datasources:
+    clinica0001:
+      url: jdbc:postgresql://localhost:5432/evoclinica
+      driverClassName: org.postgresql.Driver
+      username: evoclinica
+      #password: 
+      schema: clinica0001
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0001
+    clinica0002:
+      url: jdbc:postgresql://localhost:5432/evoclinica
+      driverClassName: org.postgresql.Driver
+      username: evoclinica
+      #password: 
+      schema: clinica0002
+      maximum-pool-size: 3
+      pool-name: Hikari-clinica0002
