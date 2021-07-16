@@ -9,12 +9,22 @@ spring:
       implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
 tenants:
   datasources:
+    public:
+      url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+      driverClassName: org.h2.Driver
+      username: sa
+      password: 
+      minimum-pool-size: 0
+      maximum-pool-size: 1
+      pool-name: Hikari-public
+      schema: public
+      liquibaseContext: public
     clinica0001:
       url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0001;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
       driverClassName: org.h2.Driver
       username: sa
       password: 
-      minimum-pool-size: 1
+      minimum-pool-size: 0
       maximum-pool-size: 3
       pool-name: Hikari-clinica0001
       schema: clinica0001
@@ -24,7 +34,7 @@ tenants:
       driverClassName: org.h2.Driver
       username: sa
       password: 
-      minimum-pool-size: 1
+      minimum-pool-size: 0
       maximum-pool-size: 3
       pool-name: Hikari-clinica0002
       schema: clinica0002
@@ -34,7 +44,7 @@ tenants:
       driverClassName: org.h2.Driver
       username: sa
       password: 
-      minimum-pool-size: 1
+      minimum-pool-size: 0
       maximum-pool-size: 3
       pool-name: Hikari-clinica0003
       schema: clinica0003
