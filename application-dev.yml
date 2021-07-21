@@ -19,6 +19,7 @@ tenants:
       pool-name: Hikari-public
       schema: public
       liquibaseContext: public
+      priority: 1
     clinica0001:
       url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0001;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
       driverClassName: org.h2.Driver
@@ -29,6 +30,7 @@ tenants:
       pool-name: Hikari-clinica0001
       schema: clinica0001
       alias: clinicadobemestar
+      priority: 5
     clinica0002:
       url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0002;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
       driverClassName: org.h2.Driver
@@ -39,6 +41,7 @@ tenants:
       pool-name: Hikari-clinica0002
       schema: clinica0002
       alias: clinicadocorpo
+      priority: 5
     clinica0003:
       url: jdbc:h2:tcp://localhost:9092/~/.evopharma/evoclinica;SCHEMA=clinica0003;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
       driverClassName: org.h2.Driver
@@ -49,3 +52,4 @@ tenants:
       pool-name: Hikari-clinica0003
       schema: clinica0003
       alias: semprebela
+      priority: 5
